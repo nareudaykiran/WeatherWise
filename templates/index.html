@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WeatherWise - Weather App</title>
+
+    <!-- FastAPI static CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <!-- Animated weather background -->
+    <div class="weather-scene" id="weather-scene" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="moon"></div>
+
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+
+        <div class="rain-layer"></div>
+        <div class="snow-layer"></div>
+        <div class="lightning"></div>
+        <div class="weather-particles"></div>
+    </div>
+
+    <!-- Website content -->
+    <header class="navbar">
+        <h1>☀️ WeatherWise</h1>
+        <p>Your simple weather companion</p>
+    </header>
+
+    <main class="container">
+
+        <!-- City search -->
+        <section class="search-section">
+            <h2>Check the Weather</h2>
+            <p>Discover the current weather in any city.</p>
+
+            <form id="weather-form">
+                <input
+                    type="text"
+                    id="city-input"
+                    placeholder="Enter city name..."
+                    aria-label="City name"
+                    required
+                >
+
+                <button type="submit" id="search-button">
+                    Search
+                </button>
+            </form>
+
+            <p id="message" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Weather results -->
+        <section id="weather-card" class="weather-card" hidden>
+            <div class="weather-heading">
+                <div>
+                    <h2 id="city-name">City</h2>
+                    <p id="country-name">Country</p>
+                </div>
+
+                <div id="weather-icon" class="weather-icon">🌤️</div>
+            </div>
+
+            <p id="weather-description" class="weather-description">
+                Current conditions
+            </p>
+
+            <div class="temperature">
+                <span id="temperature">--</span>
+                <span class="degree">°C</span>
+            </div>
+
+            <p class="feels-like">
+                Feels like <span id="feels-like">--</span>°C
+            </p>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <span>💧</span>
+                    <p>Humidity</p>
+                    <h3 id="humidity">--%</h3>
+                </div>
+
+                <div class="detail-box">
+                    <span>💨</span>
+                    <p>Wind Speed</p>
+                    <h3 id="wind-speed">-- km/h</h3>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Weather data provided by Open-Meteo.</p>
+        </footer>
+
+    </main>
+
+    <!-- FastAPI static JavaScript -->
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
